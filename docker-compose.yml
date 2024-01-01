@@ -1,7 +1,7 @@
 version: '3.9'
 
 services:
-  web:
+  cttm_web:
     container_name: cttm_web
     image: cttm_web
     build:
