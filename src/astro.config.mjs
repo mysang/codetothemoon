@@ -1,15 +1,12 @@
 import mdx from '@astrojs/mdx';
+import react from '@astrojs/react';
 import sitemap from '@astrojs/sitemap';
-import { defineConfig } from 'astro/config';
-
 import tailwind from '@astrojs/tailwind';
+import { defineConfig } from 'astro/config';
 
 // https://astro.build/config
 export default defineConfig({
-  site:
-    import.meta.env.MODE === 'development'
-      ? 'http://localhost:3000'
-      : 'https://codetothemoon.com',
-  integrations: [mdx(), sitemap(), tailwind()],
+  integrations: [mdx(), sitemap(), tailwind(), react()],
+  site: import.meta.env.MODE === 'development' ? 'http://localhost:4321' : 'https://codetothemoon.com',
   output: 'static',
 });

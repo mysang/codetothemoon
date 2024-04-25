@@ -6,5 +6,19 @@
   },
   "[astro]": {
     "editor.defaultFormatter": "astro-build.astro-vscode"
-  }
+  },
+  "cSpell.words": [
+    "Adak",
+    "astro",
+    "astrojs",
+    "consts",
+    "Minh",
+    "nanostores",
+    "Pago",
+    "preact",
+    "tailwindcss",
+    "timzone",
+    "tsconfigs",
+    "codetothemoon"
+  ]
 }
