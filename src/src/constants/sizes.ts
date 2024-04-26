@@ -1,0 +1,18 @@
+export const SIZES = [
+  {label: '1X', value: '1'},
+  {label: '5X', value: '5'},
+  {label: '10X', value: '10'},
+  {label: '15X', value: '15'},
+  {label: '20X', value: '20'},
+  {label: '25X', value: '25'},
+  {label: '30X', value: '30'},
+  {label: '35X', value: '35'},
+  {label: '40X', value: '40'},
+  {label: '45X', value: '45'},
+  {label: '50X', value: '50'},
+  {label: '60X', value: '60'},
+  {label: '70X', value: '70'},
+  {label: '80X', value: '80'},
+  {label: '90X', value: '90'},
+  {label: '100X', value: '100'},
+];

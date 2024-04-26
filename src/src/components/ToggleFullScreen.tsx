@@ -1,7 +1,7 @@
-import { useState, useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import Button from './Button';
-import PointingOut from './icons/PointingOut';
 import PointingIn from './icons/PointingIn';
+import PointingOut from './icons/PointingOut';
 
 const ToggleFullScreen = () => {
   const [isFullScreen, setIsFullScreen] = useState(!!document.fullscreenElement);

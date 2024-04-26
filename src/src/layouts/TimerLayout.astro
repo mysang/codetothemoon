@@ -1,0 +1,66 @@
+---
+import ButtonLink from '../components/ButtonLink';
+import ThemeToggle from '../components/ThemeToggle';
+import TimeColor from '../components/TimeColor';
+import TimeFont from '../components/TimeFont';
+import ToggleFullScreen from '../components/ToggleFullScreen';
+import Clock from '../components/icons/Clock';
+import TimerHeaderScript from './TimerHeaderScript.astro';
+
+import Timezone from '../components/Timezone';
+import '../styles/timer.css';
+
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta
+      name="description"
+      content="Xtimer is a completely free online timer and countdown tool. It will help you easily manage your time extremely effectively."
+    />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+    <TimerHeaderScript />
+  </head>
+  <body class="w-full h-full bg-white dark:bg-gray-900 text-gray-600 dark:text-gray-200">
+    <header class="fixed z-[99999] w-full">
+      <nav class="p-4">
+        <div class="flex justify-between flex-wrap">
+          <div class="flex flex-wrap justify-center align-center">
+            <div class="mb-2">
+              <ButtonLink href="/timer"><Clock /> <span class="ms-1">Time</span></ButtonLink>
+            </div>
+          </div>
+          <div class="flex flex-wrap justify-center align-center">
+            <div class="me-2 mb-2">
+              <Timezone client:only="react" />
+            </div>
+            <div class="me-2 mb-2">
+              <TimeFont client:only="react" />
+            </div>
+            <div class="me-2 mb-2">
+              <TimeColor client:only="react" />
+            </div>
+            <div class="me-2 mb-2">
+              <ThemeToggle client:only="react" />
+            </div>
+            <div class="mb-2">
+              <ToggleFullScreen client:only="react" />
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <slot />
+  </body>
+</html>

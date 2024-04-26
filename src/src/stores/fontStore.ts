@@ -1,6 +1,6 @@
 import { atom } from 'nanostores';
 
-export const fontStore = atom('IBM Plex Mono');
+export const fontStore = atom('ds_digital');
 
 export function setFontStore(font: string) {
   fontStore.set(font);

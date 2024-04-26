@@ -1,7 +1,6 @@
-import type React from 'react';
-import ChevronDown from './icons/ChevronDown';
-import { useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { closeDropdown } from '../utils/close-dropdown';
+import ChevronDown from './icons/ChevronDown';
 
 type Props = {
   text: string;
@@ -36,14 +35,14 @@ const Dropdown = (props: Props) => {
         aria-expanded="true"
         aria-haspopup="true"
       >
-        {props.icon && <span className="me-2">{props.icon}</span>}
-        <span className="me-2">{props.text}</span>
+        {props.icon && <span className="me-1">{props.icon}</span>}
+        <span className="me-1">{props.text}</span>
         <ChevronDown classes="h-5 w-5" />
       </button>
 
       <div
         id={props.dropdownId}
-        className="hidden absolute right-0 z-10 mt-2 w-56 origin-top-right rounded-md focus:outline-none bg-gray-200 dark:bg-gray-600"
+        className="hidden absolute right-0 z-[99999] mt-2 mw-56 origin-top-right rounded-md focus:outline-none bg-gray-200 dark:bg-gray-600"
         role="menu"
         aria-orientation="vertical"
         aria-labelledby={props.buttonId}

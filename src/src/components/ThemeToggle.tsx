@@ -1,9 +1,9 @@
-import { useState, useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
+import { setThemeStore } from '../stores/themeStore';
+import { getTheme } from '../utils/helpers';
+import Button from './Button';
 import Moon from './icons/Moon';
 import Sun from './icons/Sun';
-import Button from './Button';
-import { getTheme } from '../utils/helpers';
-import { setThemeStore } from '../stores/themeStore';
 
 const ThemeToggle = () => {
   const [theme, setTheme] = useState(getTheme());
@@ -26,7 +26,7 @@ const ThemeToggle = () => {
   return (
     <Button onClick={handleClick}>
       {theme === 'light' ? <Sun /> : <Moon />}
-      {theme === 'light' ? <span className="ms-1">Dark</span> : <span className="ms-1">Light</span>}
+      <span className="ms-1">Theme: { theme === 'light' ? 'Light' : 'Dark' }</span>
     </Button>
   );
 };

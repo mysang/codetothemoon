@@ -1,13 +1,11 @@
-import { useEffect, useState } from 'react';
+import { useStore } from '@nanostores/react';
+import React, { useEffect, useState } from 'react';
+import { DARK_COLORS, LIGHT_COLORS } from '../constants/colors';
+import { colorLabelStore, getColorLabelStore, setColorLabelStore } from '../stores/colorLabelStore';
+import { getThemeStore, themeStore } from '../stores/themeStore';
 import Dropdown from './Dropdown';
 import Cog from './icons/Cog';
-import { DARK_COLORS, LIGHT_COLORS } from '../constants/colors';
-import { getTheme } from '../utils/helpers';
-import { getThemeStore, themeStore } from '../stores/themeStore';
-import { useStore } from '@nanostores/react';
-import { colorLabelStore, getColorLabelStore, setColorLabelStore } from '../stores/colorLabelStore';
 
-type Props = {};
 type Color = {
   label: string;
   value: string;
@@ -17,7 +15,7 @@ const mainId = 'choose-colors';
 const buttonId = 'colors-button';
 const dropdownId = 'colors-dropdown';
 
-const TimeColor = (props: Props) => {
+const TimeColor = () => {
   const colorList = {
     dark: DARK_COLORS,
     light: LIGHT_COLORS,
@@ -57,12 +55,12 @@ const TimeColor = (props: Props) => {
   }, [colors, theme]);
 
   return (
-    <Dropdown text={getColorLabelStore()} mainId={mainId} buttonId={buttonId} dropdownId={dropdownId} icon={<Cog />}>
+    <Dropdown text={`Color: ${getColorLabelStore()}`} mainId={mainId} buttonId={buttonId} dropdownId={dropdownId} icon={<Cog />}>
       {colors.map((color) => (
         <button
           key={color.value}
           type="button"
-          className="flex justify-start items-center block w-full px-4 py-1 hover:bg-gray-300 dark:hover:bg-gray-700 focus:bg-gray-300 dark:focus:bg-gray-700 focus:outline-none"
+          className={`flex justify-start items-center block w-full px-4 py-1 hover:bg-gray-300 dark:hover:bg-gray-700 focus:bg-gray-300 dark:focus:bg-gray-700 focus:outline-none ${getColorLabelStore() == color.label ? 'bg-gray-300 dark:bg-gray-700' : ''}`}
           role="menuitem"
           tabIndex={-1}
           onClick={() => changeColor(color)}

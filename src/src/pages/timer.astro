@@ -1,13 +1,13 @@
 ---
 import Time from '../components/Time';
-import Layout from '../layouts/Timer.astro';
+import TimerLayout from '../layouts/TimerLayout.astro';
 import { getTitleStore } from '../stores/titleStore';
 ---
 
-<Layout title={getTitleStore()}>
+<TimerLayout title={getTitleStore()}>
   <main class="w-full h-full">
     <Time client:only="react" />
   </main>
-</Layout>
+</TimerLayout>
 
 <style></style>
