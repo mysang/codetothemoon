@@ -1,4 +1,5 @@
 <script is:inline>
+  // Theme mode
   const theme = (() => {
     if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
       return localStorage.getItem('theme');
@@ -18,4 +19,14 @@
   }
 
   localStorage.setItem('theme', theme);
+
+  // Mouse stopped
+  let timeout;
+  document.addEventListener('mousemove', () => {
+    clearTimeout(timeout);
+    document.documentElement.classList.remove('mouse-stopped');
+    timeout = setTimeout(() => {
+      document.documentElement.classList.add('mouse-stopped');
+    }, 2000);
+  });
 </script>

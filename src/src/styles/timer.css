@@ -275,10 +275,6 @@ html {
   font-family: 'Roboto_Mono', 'system-ui', 'sans-serif';
 }
 
-.text-justify {
-  text-justify: inter-character;
-}
-
 .text-last-justify {
   text-align: justify;
   -moz-text-align-last: justify;
@@ -288,4 +284,23 @@ html {
 .sr_only {
   visibility: hidden;
   opacity: 0;
+}
+
+.mouse-stopped {
+  cursor: none;
+}
+
+.mouse-move {
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+.mouse-stopped .mouse-move {
+  visibility: hidden !important;
+  opacity: 0 !important;
+}
+
+.mouse-stopped .mouse-move:hover {
+  visibility: visible !important;
+  opacity: 1 !important;
 }
