@@ -1,4 +1,4 @@
-version: "3.9"
+version: '3.9'
 
 services:
   cttm:
@@ -8,10 +8,11 @@ services:
       context: .
       dockerfile: Dockerfile
     ports:
-      - "4321:4321"
+      - '4321:4321'
     working_dir: /app
     env_file:
       - .env
     volumes:
       - ./src:/app
+      - ./docs:/docs
     command: sh -c "npm i && npm run dev -- --host 0.0.0.0"

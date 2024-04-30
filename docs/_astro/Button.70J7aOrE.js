@@ -1,0 +1,1 @@
+import{j as e}from"./jsx-runtime.DlvXYQcG.js";import"./index.Dxo6E9JU.js";const o=t=>e.jsx("button",{className:`flex items-center justify-center h-[44px] bg-gray-300 px-4 py-2 rounded-lg leading-none dark:bg-gray-600 ${t.classes}`,type:"button",onClick:t.onClick,children:t.children});export{o as B};
