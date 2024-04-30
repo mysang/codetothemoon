@@ -10,4 +10,8 @@ export default defineConfig({
   site: import.meta.env.MODE === 'development' ? 'http://localhost:4321' : 'https://codetothemoon.com',
   output: 'static',
   outDir: '../docs',
+  build: {
+    assets: 'public',
+    assetsPrefix: import.meta.env.MODE === 'development' ? 'http://localhost:4321' : 'https://codetothemoon.com',
+  },
 });
