@@ -12,6 +12,6 @@ export default defineConfig({
   outDir: '../docs',
   build: {
     assets: 'public',
-    assetsPrefix: import.meta.env.MODE === 'development' ? 'http://localhost:4321' : 'https://codetothemoon.com',
+    assetsPrefix: 'https://codetothemoon.com',
   },
 });
