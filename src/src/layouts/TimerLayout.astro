@@ -1,13 +1,10 @@
 ---
 import ButtonLink from '../components/ButtonLink';
-import ThemeToggle from '../components/ThemeToggle';
-import TimeColor from '../components/TimeColor';
-import TimeFont from '../components/TimeFont';
-import ToggleFullScreen from '../components/ToggleFullScreen';
+import FullScreen from '../components/FullScreen';
 import Clock from '../components/icons/Clock';
 import TimerHeaderScript from './TimerHeaderScript.astro';
 
-import Timezone from '../components/Timezone';
+import Menu from '../components/Menu';
 import '../styles/timer.css';
 
 interface Props {
@@ -31,7 +28,7 @@ const { title } = Astro.props;
     <title>{title}</title>
     <TimerHeaderScript />
   </head>
-  <body class="w-full h-full bg-white dark:bg-gray-900 text-gray-600 dark:text-gray-200">
+  <body class="w-full h-full bg-white dark:bg-black text-gray-600 dark:text-gray-200">
     <header class="fixed z-[99999] w-full mouse-move">
       <nav class="p-4">
         <div class="flex justify-between flex-wrap">
@@ -42,19 +39,10 @@ const { title } = Astro.props;
           </div>
           <div class="flex flex-wrap justify-center align-center">
             <div class="me-2 mb-2">
-              <Timezone client:only="react" />
-            </div>
-            <div class="me-2 mb-2">
-              <TimeFont client:only="react" />
-            </div>
-            <div class="me-2 mb-2">
-              <TimeColor client:only="react" />
-            </div>
-            <div class="me-2 mb-2">
-              <ThemeToggle client:only="react" />
+              <Menu client:only="react" />
             </div>
             <div class="mb-2">
-              <ToggleFullScreen client:only="react" />
+              <FullScreen client:only="react" />
             </div>
           </div>
         </div>

@@ -21,13 +21,6 @@
 }
 
 @font-face {
-  font-family: 'DS_Digital';
-  src: url('/fonts/DS_Digital/Ds_Digital-Regular.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
   font-family: 'Digital_7';
   src: url('/fonts/Digital_7/digital-7-Regular.ttf') format('truetype');
   font-weight: normal;
@@ -127,13 +120,6 @@
 }
 
 @font-face {
-  font-family: 'DS_Digital';
-  src: url('/fonts/DS_Digital/Ds_Digital-Bold.ttf') format('truetype');
-  font-weight: bold;
-  font-style: normal;
-}
-
-@font-face {
   font-family: 'Digital_7';
   src: url('/fonts/Digital_7/digital-7-Bold.ttf') format('truetype');
   font-weight: bold;
@@ -215,6 +201,7 @@ html {
   height: 100%;
 }
 
+/* Font Family */
 .font-antonio {
   font-family: 'Antonio', 'system-ui', 'sans-serif';
 }
@@ -225,10 +212,6 @@ html {
 
 .font-cousine {
   font-family: 'Cousine', 'system-ui', 'sans-serif';
-}
-
-.font-ds_digital {
-  font-family: 'DS_Digital', 'system-ui', 'sans-serif';
 }
 
 .font-digital_7 {
@@ -275,6 +258,100 @@ html {
   font-family: 'Roboto_Mono', 'system-ui', 'sans-serif';
 }
 
+/* Font Size */
+.text-1rem {
+  font-size: 1rem;
+}
+
+.text-2rem {
+  font-size: 2rem;
+}
+
+.text-3rem {
+  font-size: 3rem;
+}
+
+.text-4rem {
+  font-size: 4rem;
+}
+
+.text-5rem {
+  font-size: 5rem;
+}
+
+.text-6rem {
+  font-size: 6rem;
+}
+
+.text-7rem {
+  font-size: 7rem;
+}
+
+.text-8rem {
+  font-size: 8rem;
+}
+
+.text-9rem {
+  font-size: 9rem;
+}
+
+.text-10rem {
+  font-size: 10rem;
+}
+
+.text-15rem {
+  font-size: 15rem;
+}
+
+.text-20rem {
+  font-size: 20rem;
+}
+
+.text-25rem {
+  font-size: 25rem;
+}
+
+.text-30rem {
+  font-size: 30rem;
+}
+
+.text-35rem {
+  font-size: 35rem;
+}
+
+.text-40rem {
+  font-size: 40rem;
+}
+
+.text-45rem {
+  font-size: 45rem;
+}
+
+.text-50rem {
+  font-size: 50rem;
+}
+
+.text-60rem {
+  font-size: 60rem;
+}
+
+.text-70rem {
+  font-size: 70rem;
+}
+
+.text-80rem {
+  font-size: 80rem;
+}
+
+.text-90rem {
+  font-size: 90rem;
+}
+
+.text-100rem {
+  font-size: 100rem;
+}
+
+/* Custom */
 .text-last-justify {
   text-align: justify;
   -moz-text-align-last: justify;
@@ -303,4 +380,27 @@ html {
 .mouse-stopped .mouse-move:hover {
   visibility: visible !important;
   opacity: 1 !important;
+}
+
+.dropdown-item-active,
+.dropdown-item-active:hover {
+  background-color: #2684FF !important;
+  color: #ffffff !important;
+}
+
+#navbar {
+  left: 100%;
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+}
+
+#navbar.active {
+  left: unset;
+  visibility: visible;
+  opacity: 1;
 }

@@ -8,9 +8,7 @@ import React from 'react';
 import '../styles/select.css';
 import ChevronDown from './icons/ChevronDown';
 
-const DropdownIndicator = (
-  props: DropdownIndicatorProps<{ value: string; label: string; }>
-) => {
+const DropdownIndicator = (props: DropdownIndicatorProps<{ value: string; label: string }>) => {
   return (
     <components.DropdownIndicator {...props}>
       <ChevronDown />
@@ -42,7 +40,7 @@ const Timezone = () => {
   return (
     <Select
       components={{ DropdownIndicator }}
-      className="react-select-container"
+      className="react-select-container w-full"
       value={timezone}
       onChange={handleOnChange}
       options={TIMEZONES}

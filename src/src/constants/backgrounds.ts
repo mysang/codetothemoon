@@ -1,0 +1,32 @@
+export const DARK_BACKGROUNDS = [
+  { label: 'Black', value: '#000000' },
+  { label: 'Slate', value: '#020617' },
+  { label: 'Gray', value: '#070e1a' },
+  { label: 'Zinc', value: '#0b0c10' },
+  { label: 'Neutral', value: '#0d1217' },
+  { label: 'Stone', value: '#13181f' },
+  { label: 'Amber', value: '#472314' },
+  { label: 'Pink', value: '#510b27' },
+  { label: 'Green', value: '#0f3b33' },
+  { label: 'Violet', value: '#301a6f' },
+  { label: 'Sky', value: '#0a314b' },
+  { label: 'Blue', value: '#192757' },
+  { label: 'Teal', value: '#063436' },
+];
+
+export const LIGHT_BACKGROUNDS = [
+  { label: 'White', value: '#FFFFFF' },
+  { label: 'Slate', value: '#ecf3fa' },
+  { label: 'Gray', value: '#f1f3f6' },
+  { label: 'Red', value: '#f5dfe3' },
+  { label: 'Orange', value: '#fdecd7' },
+  { label: 'Amber', value: '#faf1ca' },
+  { label: 'Pink', value: '#efe3f3' },
+  { label: 'Lime', value: '#ddf3d1' },
+  { label: 'Green', value: '#d4f7e8' },
+  { label: 'Cyan', value: '#cbf9fe' },
+  { label: 'Violet', value: '#dee3fd' },
+  { label: 'Sky', value: '#d9f0ff' },
+  { label: 'Blue', value: '#d3e5fe' },
+  { label: 'Teal', value: '#c5f7f2' },
+];

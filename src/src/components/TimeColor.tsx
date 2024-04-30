@@ -1,10 +1,9 @@
 import { useStore } from '@nanostores/react';
 import React, { useEffect, useState } from 'react';
 import { DARK_COLORS, LIGHT_COLORS } from '../constants/colors';
-import { colorLabelStore, getColorLabelStore, setColorLabelStore } from '../stores/colorLabelStore';
+import { colorStore, getColorStore, setColorStore } from '../stores/colorStore';
 import { getThemeStore, themeStore } from '../stores/themeStore';
 import Dropdown from './Dropdown';
-import Cog from './icons/Cog';
 
 type Color = {
   label: string;
@@ -22,14 +21,14 @@ const TimeColor = () => {
   };
 
   const [theme] = useStore(themeStore);
-  useStore(colorLabelStore);
+  useStore(colorStore);
 
   const [colors, setColors] = useState(colorList[getThemeStore() as keyof typeof colorList]);
 
   const changeColor = (color: Color) => {
-    setColorLabelStore(color.label);
+    setColorStore(color.value);
     document.documentElement.style.setProperty('--time-color', color.value);
-    localStorage.setItem('color', JSON.stringify(color));
+    localStorage.setItem('color', color.value);
     const dropdown = document.getElementById(dropdownId);
     if (dropdown) {
       dropdown.classList.add('hidden');
@@ -38,29 +37,32 @@ const TimeColor = () => {
 
   useEffect(() => {
     setColors(colorList[getThemeStore() as keyof typeof colorList]);
-    const localColor = localStorage.getItem('color');
-    let colorObj = colors[0];
+    const localColor = localStorage.getItem('color') ?? colors[0].value;
 
-    if (localColor) {
-      const parsedColor = JSON.parse(localColor);
-      const isValidColor = colors.some((color) => color.value === parsedColor.value);
-      if (isValidColor) {
-        colorObj = parsedColor;
-      }
-    }
+    const isValidColor = colors.some((colorObj) => colorObj.value === localColor);
+    const localColorValue = isValidColor ? localColor : colors[0].value;
+
+    let colorObj = colors.find((color) => color.value === localColorValue) ?? colors[0];
 
     document.documentElement.style.setProperty('--time-color', colorObj.value);
-    localStorage.setItem('color', JSON.stringify(colorObj));
-    setColorLabelStore(colorObj.label);
+    localStorage.setItem('color', colorObj.value);
+    setColorStore(colorObj.value);
   }, [colors, theme]);
 
   return (
-    <Dropdown text={`Color: ${getColorLabelStore()}`} mainId={mainId} buttonId={buttonId} dropdownId={dropdownId} icon={<Cog />}>
+    <Dropdown
+      text={`Text Color: ${colors.find((colorObj) => colorObj.value === getColorStore())?.label ?? colors[0].label}`}
+      mainId={mainId}
+      buttonId={buttonId}
+      dropdownId={dropdownId}
+    >
       {colors.map((color) => (
         <button
           key={color.value}
           type="button"
-          className={`flex justify-start items-center block w-full px-4 py-1 hover:bg-gray-300 dark:hover:bg-gray-700 focus:bg-gray-300 dark:focus:bg-gray-700 focus:outline-none ${getColorLabelStore() == color.label ? 'bg-gray-300 dark:bg-gray-700' : ''}`}
+          className={`flex justify-start items-center block w-full px-4 py-1.5 hover:bg-gray-400 dark:hover:bg-gray-700 focus:bg-gray-300 dark:focus:bg-gray-700 focus:outline-none ${
+            getColorStore() == color.value ? 'dropdown-item-active' : ''
+          }`}
           role="menuitem"
           tabIndex={-1}
           onClick={() => changeColor(color)}

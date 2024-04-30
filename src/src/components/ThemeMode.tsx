@@ -24,9 +24,9 @@ const ThemeToggle = () => {
   }, [theme]);
 
   return (
-    <Button onClick={handleClick}>
+    <Button onClick={handleClick} classes="w-full">
       {theme === 'light' ? <Sun /> : <Moon />}
-      <span className="ms-1">Theme: { theme === 'light' ? 'Light' : 'Dark' }</span>
+      <span className="ms-1">Theme: {theme === 'light' ? 'Light' : 'Dark'}</span>
     </Button>
   );
 };

@@ -10,7 +10,7 @@ const Select = (props: Props) => {
   return (
     <select
       id={props.id}
-      className="h-[44px] rounded-lg px-4 py-2 bg-gray-200 dark:bg-gray-600"
+      className="h-[44px] rounded-lg px-4 py-2 bg-gray-300 dark:bg-gray-600"
       onChange={props.onChange}
     >
       {props.children}

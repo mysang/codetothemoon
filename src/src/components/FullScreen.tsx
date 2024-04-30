@@ -17,7 +17,7 @@ const ToggleFullScreen = () => {
   };
 
   useEffect(() => {
-    document.addEventListener('fullscreenchange', (e) => {
+    document.addEventListener('fullscreenchange', () => {
       if (document.fullscreenElement) {
         setIsFullScreen(true);
       } else {
