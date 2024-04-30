@@ -9,6 +9,6 @@ export default defineConfig({
   integrations: [mdx(), sitemap(), tailwind(), react()],
   site: import.meta.env.MODE === 'development' ? 'http://localhost:4321' : 'https://codetothemoon.com',
   output: 'static',
-  base: '/docs',
+  base: 'docs',
   outDir: '../docs',
 });
